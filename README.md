@@ -146,3 +146,37 @@ See `swagger-screenshot.png` in this repository.
 
 https://github.com/Bindhu1929/task-api
 
+\## Automated Testing
+
+
+
+Automated tests are written using pytest and FastAPI TestClient.
+
+
+
+To run the tests:
+
+
+
+```bash
+
+python -m pytest -v
+
+```
+
+
+
+Test results:
+
+
+
+\- Total tests: 9
+
+\- Passed: 9
+
+\- Failed: 0
+
+
+
+All 9 automated tests passed successfully.
+
