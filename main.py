@@ -1,7 +1,15 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel, model_validator
 
 app = FastAPI(title="Task API", version="1.0")
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    return JSONResponse(
+        status_code=400,
+        content={"error": "Invalid request body"}
+    )
 
 tasks = [
     {"id": 1, "title": "Learn Python", "done": False},
@@ -18,6 +26,11 @@ class TaskUpdate(BaseModel):
     title: str | None = None
     done: bool | None = None
 
+    @model_validator(mode="after")
+    def check_update_fields(self):
+        if self.title is None and self.done is None:
+            raise ValueError("At least one field must be provided")
+        return self
 
 @app.get("/")
 def home():

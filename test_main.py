@@ -79,3 +79,16 @@ def test_delete_task():
 def test_delete_missing_task():
     response = client.delete("/tasks/999")
     assert response.status_code == 404
+def test_create_task_without_title():
+    response = client.post("/tasks", json={})
+    assert response.status_code == 400
+
+
+def test_create_task_with_empty_title():
+    response = client.post("/tasks", json={"title": " "})
+    assert response.status_code == 400
+
+
+def test_update_task_with_empty_body():
+    response = client.put("/tasks/1", json={})
+    assert response.status_code == 400
