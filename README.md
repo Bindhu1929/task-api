@@ -170,13 +170,13 @@ Test results:
 
 
 
-\- Total tests: 9
+\- Total tests: 12
 
-\- Passed: 9
+\- Passed: 12
 
 \- Failed: 0
 
 
 
-All 9 automated tests passed successfully.
+All 12 automated tests passed successfully.
 
