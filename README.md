@@ -94,3 +94,55 @@ Open http://127.0.0.1:8000/docs
 
 Tasks are stored in an in-memory Python list. Data resets when the server restarts.
 
+\## Sample Request
+
+
+
+Create a task using POST `/tasks`:
+
+
+
+```json
+
+{
+
+&#x20; "title": "Complete my internship project"
+
+}
+
+```
+
+
+
+\## Testing
+
+
+
+The API was tested using Swagger UI.
+
+
+
+\- GET – Read tasks
+
+\- POST – Create a task
+
+\- PUT – Update a task
+
+\- DELETE – Delete a task
+
+
+
+\## Swagger Screenshot
+
+
+
+See `swagger-screenshot.png` in this repository.
+
+
+
+\## GitHub Repository
+
+
+
+https://github.com/Bindhu1929/task-api
+
