@@ -180,3 +180,51 @@ Test results:
 
 All 12 automated tests passed successfully.
 
+\## API Test Evidence
+
+
+
+The following command confirms that the Task API is running successfully.
+
+
+
+\*\*Command:\*\*
+
+
+
+```bash
+
+curl -i http://127.0.0.1:8000/
+
+```
+
+
+
+\*\*Output:\*\*
+
+
+
+```text
+
+HTTP/1.1 200 OK
+
+date: Tue, 24 Nov 2026 16:28:37 GMT
+
+server: uvicorn
+
+content-length: 58
+
+content-type: application/json
+
+
+
+{"name":"Task API","version":"1.0","endpoints":\["/tasks"]}
+
+```
+
+
+
+All 12 automated tests passed successfully using `python -m pytest -v`.
+
+
+
